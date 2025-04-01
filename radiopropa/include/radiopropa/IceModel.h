@@ -61,7 +61,7 @@ class IceModel_Polynomial: public ScalarField
 {
 	protected:
 		double _z_surface, _z_0, _z_shift;
-		double _density_factor, _density_units;
+		double _density_factor;
 		std::vector<double> _coefficients;
 		virtual double getIntegral(const double z) const;
 	public:
@@ -70,7 +70,6 @@ class IceModel_Polynomial: public ScalarField
 			double z_0, 
 			double z_surface=0.,
 			double z_shift=0.,
-			double density_units=(kilogram / std::pow(meter,3)),
 			double density_factor=(0.8506 * (std::pow(cm,3)/(kilogram/1000.))));
 		virtual ~IceModel_Polynomial();
 		virtual double getValue(const Vector3d &position) const; 
